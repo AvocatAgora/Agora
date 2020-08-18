@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Agora-log_in</title>
+    <link rel="stylesheet" href="css//login.css">
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>
+                <a href="/" class="log_h">
+                    <span class="blind">Agora</span>
+                </a>
+            </h1>
+        </div>
+            <div id="body">
+                <form action="/login" accept-charset="utf-8" name="log_info" method="POST">    
+                    <input class="log_input" type="email" name="email" placeholder="아이디" /><br><br>
+                    <input class="log_input" type="password" name="password" placeholder="비밀번호" /><br><br>
+                    <input class="log_submit" type="submit" name="submit" value="로그인" />
+                </form>
+                    <div class="new_log_use">
+                        <span class="not_use">아직 계정이 없으신가요?</span>
+                        <a href="/log_use" class="use_h">
+                            <span class="new_use">회원가입</span>
+                        </a>
+                    </div> 
+            </div>
+    </div>
+</body>
+</html>

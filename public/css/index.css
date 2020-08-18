@@ -1,0 +1,227 @@
+body {
+    background: #f5f6f7;
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    font-family: 'Do Hyeon', sans-serif;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    background-color: white;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+}
+.head_img {
+    width: 4.5em
+}
+.head_img:hover {
+    cursor: pointer;
+}
+.fa-search::before {
+    color: #deb887;
+}
+#body_search {
+    border: 1px solid #DCDCDC;
+    color: #DCDCDC;
+    background: #F5F5F5;
+    border-radius: 8px;
+    margin: 0.9em auto;
+    padding: 6px 1em;
+    height: 24px;
+}
+#body_search:hover {
+    border-color: burlywood;
+}
+.search_input {
+    background: #F5F5F5;
+    font-family: 'Cabin', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    width: 38em;
+}
+.log {
+    margin: 0.5em 2em;
+    color: burlywood; /*#FFEBCD*/
+    border: 1px solid burlywood;
+    border-radius: 8px;
+    padding: 12px 28px;
+    text-decoration: none;
+}
+.log:hover {
+    cursor: pointer;
+    color: #FFEBCD;
+}
+.log:last-child {
+    background-color: burlywood;
+    color: white;
+}
+.log:last-child:hover {
+    background-color: #FFEBCD;
+}
+#top_body {
+    margin: 6em 13.2em;
+}
+.big_news_name {
+    margin: 0px 3em;
+    font-family: 'Gugi', cursive;
+    font-style: italic;
+}
+#flex_part {
+    display: flex;
+    justify-content: center;
+}
+.news_part {
+    color: white;
+    font-family: 'Noto Sans',Arial,sans-serif;
+    border-radius: 15px;
+    box-shadow: 2px -40px 70px 5px black inset;
+    width: 12em;
+    height: 11em;
+    margin: 1em 1em;
+    padding: 1em 1em;
+}
+.news_part:hover {
+    cursor: pointer;
+    box-shadow: none;
+}
+#part_1 {
+    background-image: url(../img/Mancity.jpg);
+    background-size: cover;
+}
+#part_2 {
+    background-image: url(../img/Ssack.png);
+    background-size: cover;
+}
+#part_3 {
+    background-image: url(../img/valorant.jpg);
+    background-size: cover;
+}
+#part_4 {
+    background-image: url(../img/Gun.jpg);
+    background-size: cover;
+}
+.news_name {
+    margin: 2em 0em;
+    font-weight: bold;
+    color: white;
+}
+.user_name {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+}
+.flex_body {
+    display: flex;
+}
+#second_body {
+    margin: -5em 13.3em 0;
+}
+#Update_post {
+    border: 1px solid #DCDCDC;
+    border-radius: 8px;
+    font-family: 'Gugi', cursive;
+    background: white;
+    margin: 1em 3em;
+    padding: .5em 1em 2em;
+    width: 36em;
+}
+.Second_body_head {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 0 1em;
+}
+.update_box {
+    display: flex;
+    border: 1px solid #c0c0c0;
+    border-radius: 15px;
+    width: 30em;
+    margin: 0 2em;
+    padding: .6em 1em;
+}
+.update_box:hover {
+    cursor: pointer;
+    border: 1px solid #708090;
+}
+.box_big_name {
+    margin: 1em 0 0;
+}
+.box_main_text {
+    margin: .5em 0 1em;
+    color: #808080;
+    font-size: 13px;
+}
+.update_img {
+    width: 6em;
+    margin: 11px 72px;
+}
+.search_chart {
+    background-color: white;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    margin: -2.6em -12.4em;
+    width: 19.5em;
+    height: 21em;
+}
+.chart_header {
+    background: #deb887;
+    border-bottom: 1px solid #deb887;
+    padding: 1.2em 1em 8px;
+}
+.chart_header_font {
+    font-family: 'Noto Sans',Arial,sans-serif;
+    font-weight: bold;
+    color: white
+}
+.chart_header_font:hover {
+    cursor: pointer;
+}
+.chart_body {
+    background: white;
+}
+.chart_text {
+    padding: 0.6em 1em;
+    border-bottom: 1px solid #DCDCDC;
+}
+#chart_text_5 {
+    border:none;
+}
+.ranking_number {
+    padding: 0px 1em;
+    font-family: 'Gugi', cursive;
+    font-size: 14px;
+}
+.ranking_number:hover {
+    cursor: pointer;
+}
+.ranking_text {
+    margin: 0px 1em;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+.ranking_text:hover {
+    cursor: pointer;
+    border-bottom: 1px solid black;
+}
+.view_box {
+    background: #deb887;
+    border-radius: 5px;
+    margin: 0.5em auto;
+    padding: 0.5em 0;
+    width: 14em;
+    text-align: center;
+    color: white;
+}
+.view_box:hover {
+    cursor: pointer;
+    background: #ffe4c4;
+}
+.view_box_in {
+    font-family: 'Noto Sans',Arial,sans-serif;
+    font-weight: bold;
+}

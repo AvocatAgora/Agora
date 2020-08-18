@@ -1,0 +1,68 @@
+body {
+    background: #f5f6f7;
+    margin: 0 5em;
+}
+#wrap {
+    position: relative;
+}
+#header {
+    text-align: center;
+    align-items: center;
+    position: relative;
+    padding: 106px 0 53px;
+    box-sizing: border-box;
+}
+.log_h {
+    text-decoration: none;
+}
+.blind {
+    font-size: 2em;
+    font-weight: bold;
+    color: darksalmon;
+}
+#body {
+    text-align: center;
+    margin: 1em 0;
+}
+.log_input {
+    padding: 1em 1em;
+    text-align: left;
+    outline: none;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    font-size: .9em;
+    width: 28em;
+}
+.log_submit {
+    width: 32.5em;
+    height: 3.5em;
+    border: 1px solid darksalmon;
+    border-radius: 5px;
+    outline: none;
+    background: darksalmon;
+    color: white;
+}
+.log_submit:hover {
+    border-color: lightsalmon;
+    background: lightsalmon;
+}
+.new_log_use {
+    margin: 2.5em 30em;
+    text-align: left;
+}
+.not_use {
+    color: #a9a9a9;
+    font-size: 1em;
+    font-weight: 400;
+    font-style: italic;
+}
+.use_h {
+    text-decoration: none;
+}
+.new_use {
+    color: darksalmon;
+    padding: 0 1em;
+}
+.new_use:hover {
+    color: lightsalmon;
+}
