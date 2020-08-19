@@ -60,20 +60,31 @@ passport.use(new LocalStrategy(
     },
     function(username, password, done){
         db.query('SELECT * FROM users WHERE user_email = ?', username, function(err, result){
-            if(password === result[0].user_password){
-                console.log('로그인 성공 user_name: ' + result[0].user_name);
-                return done(null, result[0]);
-            } else {
+            if(result[0] === undefined){
+                console.log('실패...');
                 return done(null, false, {
                     message: 'Incorrect password.'
                 });
+            } else {
+                if(password === result[0].user_password){
+                    console.log('로그인 성공 user_name: ' + result[0].user_name);
+                    return done(null, result[0]);
+                } else {
+                    console.log('실패...');
+                    return done(null, false, {
+                        message: 'Incorrect password.'
+                    });
+                }
             }
         })
     }
 ))
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', { 
+        isOwner: auth.isOwner(req, res),
+        newPost: auth.newPost()
+    })
 })
 
 app.get('/login', (req, res) => {
@@ -88,6 +99,7 @@ app.post('/login',
 
 app.get('/logout', function(req, res){
     req.logout();
+    console.log("로그아웃")
     req.session.save(function(){
         res.redirect('/');
     })

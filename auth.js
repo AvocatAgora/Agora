@@ -1,18 +1,20 @@
 module.exports = {
+    isLogin: false,
     isOwner:function(req, res){
         if(req.user){
+            this.isLogin = true;
             return true;
         } else {
+            this.isLogin = false;
             return false;
         }
     },
-
-    statusUI:function(req, res){
-        var authStatusUI = 'login'
-        if(this.isOwner(req, res)){
-            console.log(req.user.user_name)
-            authStatusUI = `${req.user.user_name}`
+    newPost: function() {
+        if(this.isLogin){
+            alert('로그인 완료!');
+        } else {
+            alert('로그인 후 이용해주세요!');
+            window.location = '/login';
         }
-        return authStatusUI;
     }
 }

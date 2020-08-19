@@ -2,8 +2,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Agora-log_in</title>
-    <link rel="stylesheet" href="css//login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agora 로그인</title>
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
 </head>
 <body>
     <div id="wrap">
@@ -15,16 +16,18 @@
             </h1>
         </div>
             <div id="body">
-                <form action="/login" accept-charset="utf-8" name="log_info" method="POST">    
-                    <input class="log_input" type="email" name="email" placeholder="아이디" /><br><br>
+                <form action="" accept-charset="utf-8" name="log_info" method="POST">    
+                    <input class="log_input" type="text" name="email" placeholder="아이디" /><br><br>
                     <input class="log_input" type="password" name="password" placeholder="비밀번호" /><br><br>
                     <input class="log_submit" type="submit" name="submit" value="로그인" />
                 </form>
                     <div class="new_log_use">
-                        <span class="not_use">아직 계정이 없으신가요?</span>
-                        <a href="/log_use" class="use_h">
-                            <span class="new_use">회원가입</span>
-                        </a>
+                        <div id="use_flex">
+                            <span class="not_use">아직 계정이 없으신가요?</span>
+                            <a href="log_use.html" class="use_h">
+                                <span class="new_use">회원가입</span>
+                            </a>
+                        </div>
                     </div> 
             </div>
     </div>

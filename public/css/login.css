@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     background: #f5f6f7;
     margin: 0 5em;
@@ -34,7 +37,7 @@ body {
     width: 28em;
 }
 .log_submit {
-    width: 32.5em;
+    width: 30em;
     height: 3.5em;
     border: 1px solid darksalmon;
     border-radius: 5px;
@@ -47,12 +50,15 @@ body {
     background: lightsalmon;
 }
 .new_log_use {
-    margin: 2.5em 30em;
-    text-align: left;
+    margin: 1.5em 0;
+}
+#use_flex {
+    display: flex;
+    justify-content: center;
 }
 .not_use {
     color: #a9a9a9;
-    font-size: 1em;
+    font-size: 1vw;
     font-weight: 400;
     font-style: italic;
 }
@@ -61,8 +67,12 @@ body {
 }
 .new_use {
     color: darksalmon;
+    font-size: 1vw;
     padding: 0 1em;
 }
 .new_use:hover {
     color: lightsalmon;
+}
+@media screen and (max-width: 800px){
+    
 }

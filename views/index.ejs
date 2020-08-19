@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Agora</title>
-        <link rel="stylesheet" type="text/css" href="/css/index.css">
+        <link rel="stylesheet" type="text/css" href="./css/index.css">
         <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Cabin&family=PT+Sans&display=swap" rel="stylesheet">
@@ -13,87 +13,96 @@
     </head>
     <body>
         <header id="header">
-            <img class="head_img" src="./img/agora_img.png">
+            <a href="/"><img class="head_img" src="./img/agora_img.png"></a>
                 <div id="body_search" >
                     <i class="fas fa-search"></i>
                     <input class="search_input" type="text" name="search" placeholder="검색" />
                 </div>
-                        <a href="/login" class="log">로그인</a>
-                        <a href="log_use.html" class="log">회원가입</a>
+                        <% if(isOwner == true) { %>
+                            <a href="/logout" class="log">로그아웃</a>
+                        <% } else { %>  
+                            <a href="/login" class="log">로그인</a>
+                            <a href="/log_use" class="log">회원가입</a>
+                        <% } %> 
         </header>
-            <div id="top_body">
-                <div class="big_news_name">Today News</div>
-                    <div id="flex_part">
-                        <div class="news_part" id="part_1"><p class="news_name">챔스 8강</p>
-                            멘체스터 시티가 레알을 2대1로...<p class="user_name">Hawng42</p></div>
-                        <div class="news_part" id="part_2"><p class="news_name">멜론 차트</p>
-                            싹스리가 차트를 싹다 싹스리 하는 중...<p class="user_name">Melon12</p></div>
-                        <div class="news_part" id="part_3"><p class="news_name">발로란트 공략</p>
-                            레디언트 어떻게 가냐고요? 모두 알려드리...<p class="user_name">FpsGOD2</p></div>
-                        <div class="news_part" id="part_4"><p class="news_name">손채건 논란?</p>
-                            학생 손채건의 진실을 파해쳐드리...<p class="user_name_1">Essu21</p></div>
-                    </div>
-            </div>
-                <div class="flex_body">
-                    <div id="second_body" class="flex_second_body">
-                        <div class="big_news_name">Hot posts</div>
-                            <div id="Update_post">
-                             <p class="Second_body_head">Update post!</p>
-                                    <a class="update_box">
-                                        <div class="Update_text"><h3 class="box_big_name">
-                                        재밌는 이야기를 적어주세요</h3><p class="box_main_text">
-                                        사람들과 즐겁게 소통하자!</p>
-                                        </div>
-                                            <div class="update_flex">
-                                                <img class="update_img" src="./img/Post.png">
-                                            </div>
-                                    </a>
-                            </div>
-                    </div>
-                    <div id="third_body" class="flex_third_body">
-                        <div class="search_chart">
-                            <div class="chart_header">
-                                <a class="chart_header_font">Today Search Chart</a>
-                            </div>
-                                <div class="chart_body">
-                                    <a class="chart_box">
-                                        <div class="chart_text">
-                                            <span class="ranking_number">1</span>
-                                                <span class="ranking_text">뒷광고</span>
-                                        </div>
-                                    </a>
-                                    <a class="chart_box">
-                                        <div class="chart_text">
-                                            <span class="ranking_number">2</span>
-                                                <span class="ranking_text">장필준 생일</span>
-                                        </div>
-                                    </a>
-                                    <a class="chart_box">
-                                        <div class="chart_text">
-                                            <span class="ranking_number">3</span>
-                                                <span class="ranking_text">대나무숲</span>
-                                        </div>
-                                    </a>
-                                    <a class="chart_box">
-                                        <div class="chart_text">
-                                            <span class="ranking_number">4</span>
-                                                <span class="ranking_text">손채건 서버 구축</span>
-                                        </div>
-                                    </a>
-                                    <a class="chart_box">
-                                        <div class="chart_text" id="chart_text_5">
-                                            <span class="ranking_number">5</span>
-                                                <span class="ranking_text">대마고 방학</span>
-                                            </div>
-                                    </a>
-                                </div>
-                                    <div class="chart_footer">
-                                        <div class="view_box">
-                                            <a class="view_box_in">VIEW ALL</a>
-                                        </div>
-                                    </div>
-                            </div>
+            <div id="body_all">
+                <div id="flex_body_part">
+                    <div id="top_body">
+                    <div class="big_news_name">Today News</div>
+                        <div id="flex_part">
+                            <div class="news_part" id="part_1"><p class="news_name">챔스 8강</p>
+                                멘체스터 시티가 레알을 2대1로...<p class="user_name">Hawng42</p></div>
+                            <div class="news_part" id="part_2"><p class="news_name">멜론 차트</p>
+                                싹스리가 차트를 싹다 싹스리 하는 중...<p class="user_name">Melon12</p></div>
+                            <div class="news_part" id="part_3"><p class="news_name">발로란트 공략</p>
+                                레디언트 어떻게 가냐고요? 모두 알려드리...<p class="user_name">FpsGOD2</p></div>
+                            <div class="news_part" id="part_4"><p class="news_name">손채건 논란?</p>
+                                학생 손채건의 진실을 파해쳐드리...<p class="user_name">Essu21</p></div>
+                        </div>
                     </div>
                 </div>
+                    <div class="flex_body">
+                        <div id="second_body" class="flex_second_body">
+                            <div class="big_news_name">Hot posts</div>
+                                <div id="Update_post">
+                                    <p class="Second_body_head">Update post!</p>
+                                        <a class="update_box">
+                                            
+                                            <div class="Update_text"><h3 class="box_big_name">재밌는 이야기를 적어주세요</h3>
+                                                <p class="box_main_text">사람들과 즐겁게 소통하자!</p>
+                                            </div>
+                                                <div class="update_flex">
+                                                    <img class="update_img" src="./img/Post.png">
+                                                </div>
+                                        </a>
+                                </div>
+                        </div>
+                        <div id="third_body" class="flex_third_body">
+                            <div class="search_chart">
+                                <div class="chart_header">
+                                    <a class="chart_header_font">Today Search Chart</a>
+                                </div>
+                                    <div class="chart_body">
+                                        <a class="chart_box">
+                                            <div class="chart_text">
+                                                <span class="ranking_number">1</span>
+                                                    <span class="ranking_text">뒷광고</span>
+                                            </div>
+                                        </a>
+                                        <a class="chart_box">
+                                            <div class="chart_text">
+                                                <span class="ranking_number">2</span>
+                                                    <span class="ranking_text">장필준 생일</span>
+                                            </div>
+                                        </a>
+                                        <a class="chart_box">
+                                            <div class="chart_text">
+                                                <span class="ranking_number">3</span>
+                                                    <span class="ranking_text">대나무숲</span>
+                                            </div>
+                                        </a>
+                                        <a class="chart_box">
+                                            <div class="chart_text">
+                                                <span class="ranking_number">4</span>
+                                                    <span class="ranking_text">손채건 서버 구축</span>
+                                            </div>
+                                        </a>
+                                        <a class="chart_box">
+                                            <div class="chart_text" id="chart_text_5">
+                                                   <span class="ranking_number">5</span>
+                                                    <span class="ranking_text">대마고 방학</span>
+                                                </div>
+                                        </a>
+                                    </div>
+                                        <div class="chart_footer">
+                                            <div class="view_box">
+                                                <a class="view_box_in">VIEW ALL</a>
+                                            </div>
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+        <script src="./js/index.js"></script>
     </body>
 </html>
