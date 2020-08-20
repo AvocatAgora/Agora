@@ -55,11 +55,11 @@ passport.deserializeUser(function(id, done){
 
 passport.use(new LocalStrategy(
     {
-        usernameField: 'email',
+        usernameField: 'id',
         passwordField: 'password'
     },
     function(username, password, done){
-        db.query('SELECT * FROM users WHERE user_email = ?', username, function(err, result){
+        db.query('SELECT * FROM users WHERE user_id = ?', username, function(err, result){
             if(result[0] === undefined){
                 console.log('실패...');
                 return done(null, false, {
@@ -83,7 +83,6 @@ passport.use(new LocalStrategy(
 app.get('/', (req, res) => {
     res.render('index', { 
         isOwner: auth.isOwner(req, res),
-        newPost: auth.newPost()
     })
 })
 
@@ -106,20 +105,32 @@ app.get('/logout', function(req, res){
 })
 
 app.get('/register', (req, res) => {
-    res.render('register.ejs')
+    res.render('log_use.ejs')
 })
 
 app.post('/register', async (req, res) => {
-    try {
-        db.query('INSERT INTO users (user_name, user_email, user_password) VALUES (?, ?, ?)',
-        [req.body.name, req.body.email, req.body.password], function(error, result){
+    console.log(req.body);
+    var post = req.body;
+    if(post.password === post.Repassword){
+        db.query('INSERT INTO users (user_id, user_email, user_name, user_password, user_month, user_gender) VALUES (?, "corjs835@naver.com", ?, ?, ?, ?)', 
+        [post.id, post.user_name, post.password, post.month, post.gender], function(err, result){
+            if(err) throw err;
             res.redirect('/login')
         })
-    } catch {
+    } else {
+        console.log('비밀번호가 틀렸습니다.')
         res.redirect('/register')
     }
+    // try {
+    //     db.query('INSERT INTO users (user_name, user_email, user_password) VALUES (?, ?, ?)',
+    //     [req.body.name, req.body.email, req.body.password], function(error, result){
+    //         res.redirect('/login')
+    //     })
+    // } catch {
+    //     res.redirect('/register')
+    // }
 })
 
-app.listen(8001, '0.0.0.0', function(){
-    console.log('Listening to port : ' + 8001);
+app.listen(3000, '0.0.0.0', function(){
+    console.log('Listening to port : ' + 3000);
 })

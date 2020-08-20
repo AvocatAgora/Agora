@@ -5,6 +5,58 @@
     <link rel="stylesheet" type="text/css" href="./css/log_use.css">
 </head>
 <body>
-    
+    <div id="wrap">
+        <div id="header">
+            <h1>
+                <a href="/" class="log_h">
+                    <span class="blind">Agora</span>
+                </a>
+            </h1>
+        </div>
+            <div id="body">
+                <form action="register" accept-charset="utf-8" name="log_info" method="POST">    
+                    <div class="all_log_input">
+                        <input class="log_input" type="text" name="id" placeholder="아이디" /><br><br>
+                        <input class="log_input" type="password" name="password" placeholder="비밀번호" /><br><br>
+                        <input class="log_input" type="password" name="Repassword" placeholder="비밀번호 확인" /><br><br>
+                        <input class="log_input" type="text" name="user_name" placeholder="이름" /><br><br>
+                    </div>
+                            <div class="birth">
+                                <div class="birth_info">
+                                    <input class="birth_input" type="text" placeholder="년(4자)" aria-label="년(4자)" />
+                                        <select id="month" name="month" aria-label="월">
+                                                <option value selected>월</option>
+                                                <option value="J">1</option>
+                                                <option value="F">2</option>
+                                                <option value="M">3</option>
+                                                <option value="A">4</option>
+                                                <option value="M">5</option>
+                                                <option value="J">6</option>
+                                                <option value="J">7</option>
+                                                <option value="A">8</option>
+                                                <option value="S">9</option>
+                                                <option value="O">10</option>
+                                                <option value="N">11</option>
+                                                <option value="D">12</option>
+                                                <!--name은 각 월의 영어 앞네임-->
+                                        </select>
+                                            <input class="birth_input" type="text" placeholder="일" aria-label="일" />
+                                </div>
+                            </div><br>
+                                <div class="gender_box">
+                                    <select id="gender" name="gender" aria-label="성별">
+                                                <option value selected>성별</option>
+                                                <option value="M">남자</option>
+                                                <option value="G">여자</option>
+                                                <option value="U">선택 안함</option>
+                                    </select>
+                                </div>
+                                    <div id="footer_submit">
+                                        <input class="submit_input" type="submit" name="submit" value="가입하기" />
+                                    </div>
+
+                </form>
+            </div>
+    </div>
 </body>
 </html>

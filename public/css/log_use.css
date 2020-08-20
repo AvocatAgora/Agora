@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #f5f6f7;
+    box-sizing: border-box;
+}
+#wrap {
+    position: relative;
+}
+#header {
+    text-align: center;
+    align-items: center;
+    position: relative;
+    padding: 60px 53px;
+}
+.log_h {
+    text-decoration: none;
+}
+.blind {
+    font-size: 2em;
+    font-weight: bold;
+    color: darksalmon;
+}
+#body {
+    display: flex;
+    justify-content: center;
+}
+form {
+    margin-bottom: 3em;
+}
+.all_log_input {
+    margin: 0 9px;
+}
+.log_input {
+    padding: 11px 14px;
+    margin: 0 0 12px;
+    text-align: left;
+    outline: none;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    font-size: .9em;
+    width: 28em;
+    height: 2em;
+}
+.birth {
+    display: flex;
+    justify-content: center;
+}
+.birth_info {
+    display: flex;
+    align-items: center;
+    margin: 0 0 12px;
+}
+.birth_input {
+    padding: 11px 14px;
+    margin: 0 7px;
+    text-align: left;
+    outline: none;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    font-size: .9em;
+    width: 10em;
+    height: 2em;
+}
+#month {
+    padding: 11px 14px;
+    text-align: left;
+    outline: none;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    font-size: .9em;
+    width: 5em;
+    height: 3.7em;
+}
+.gender_box {
+    display: flex;
+    justify-content: center;
+}
+#gender {
+    padding: 11px 14px;
+    margin: 0 7px 12px;
+    text-align: left;
+    outline: none;
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    font-size: .9em;
+    width: 30em;
+    height: 4em;
+}
+#footer_submit {
+    display: flex;
+    justify-content: center;
+}
+.submit_input {
+    background: darksalmon;
+    padding: 11px 14px;
+    margin: 24px 0 0;
+    text-align: center;
+    color: white;
+    outline: none;
+    border: 1px solid darksalmon;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 27em;
+    height: 3.5em;
+}
+.submit_input:hover {
+    cursor: pointer;
+    background-color: lightsalmon;
+}

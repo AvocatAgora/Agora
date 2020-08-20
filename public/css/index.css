@@ -148,9 +148,11 @@ body {
     margin: 0 0 1em;
 }
 .update_box {
+    text-decoration: none; 
     display: flex;
     border: 1px solid #c0c0c0;
     border-radius: 15px;
+    color: black;
     width: 30em;
     margin: 0 2em;
     padding: .6em 10px;
