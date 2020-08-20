@@ -112,7 +112,7 @@ app.post('/register', async (req, res) => {
     console.log(req.body);
     var post = req.body;
     if(post.password === post.Repassword){
-        db.query('INSERT INTO users (user_id, user_email, user_name, user_password, user_month, user_gender) VALUES (?, "corjs835@naver.com", ?, ?, ?, ?)', 
+        db.query('INSERT INTO users (user_id, user_name, user_password, user_month, user_gender) VALUES (?, ?, ?, ?, ?)', 
         [post.id, post.user_name, post.password, post.month, post.gender], function(err, result){
             if(err) throw err;
             res.redirect('/login')
@@ -129,6 +129,10 @@ app.post('/register', async (req, res) => {
     // } catch {
     //     res.redirect('/register')
     // }
+})
+
+app.get('/newpost', (req, res) => {
+    res.render('write_wrap.ejs')
 })
 
 app.listen(3000, '0.0.0.0', function(){
