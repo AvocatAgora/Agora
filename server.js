@@ -41,6 +41,8 @@ passport.serializeUser(function(user, done){
 });
 
 passport.deserializeUser(function(id, done){
+    auth.userId = id;
+    console.log('user ID ' + auth.userId);
     db.query('SELECT * FROM users', function(err, result){
         done(null, result[0])
     })
@@ -121,18 +123,23 @@ app.post('/register', async (req, res) => {
         console.log('비밀번호가 틀렸습니다.')
         res.redirect('/register')
     }
-    // try {
-    //     db.query('INSERT INTO users (user_name, user_email, user_password) VALUES (?, ?, ?)',
-    //     [req.body.name, req.body.email, req.body.password], function(error, result){
-    //         res.redirect('/login')
-    //     })
-    // } catch {
-    //     res.redirect('/register')
-    // }
 })
 
 app.get('/newpost', (req, res) => {
     res.render('write_wrap.ejs')
+})
+
+app.post('/newpost', (req, res) => {
+    var post = req.body;
+    db.query('SELECT * FROM users WHERE id = ?', [auth.userId], function(err, result){
+        console.log(result[0].user_name);
+        db.query('INSERT INTO posts (title, description, created, author_id) VALUES (?, ?, NOW(), ?)',
+        [post.title, post.description, result[0].user_name], function(err2, result2){
+            if(err2) throw err2;
+            console.log(result, result2);
+            res.redirect(`/${result2.insertId}`);
+        })
+    })
 })
 
 app.listen(3000, '0.0.0.0', function(){

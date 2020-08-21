@@ -1,12 +1,20 @@
 module.exports = {
-    isLogin: false,
+    userId: false,
     isOwner:function(req, res){
         if(req.user){
-            this.isLogin = true;
             return true;
         } else {
-            this.isLogin = false;
             return false;
         }
     }
 }
+
+/*
+CREATE TABLE posts(
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(30) NOT NULL,
+    description TEXT,
+    created DATETIME NOT NULL,
+    author_id VARCHAR(20) DEFAULT NULL,
+    PRIMARY KEY (id));
+*/
