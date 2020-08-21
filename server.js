@@ -30,15 +30,8 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
 }))
-app.use(flash());
-app.get('/flash', function(req, res){
-    req.flash('info', 'Flash is back!')
-    res.redirect('/');
-});
 
-app.get('/flash-display', function(req, res){
-    res.render('index', { message: req.flash('info')});
-});
+app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -63,7 +56,7 @@ passport.use(new LocalStrategy(
             if(result[0] === undefined){
                 console.log('실패...');
                 return done(null, false, {
-                    message: 'Incorrect password.'
+                    message: 'Incorrect id or password'
                 });
             } else {
                 if(password === result[0].user_password){
@@ -72,7 +65,7 @@ passport.use(new LocalStrategy(
                 } else {
                     console.log('실패...');
                     return done(null, false, {
-                        message: 'Incorrect password.'
+                        message: 'Incorrect id or password'
                     });
                 }
             }
@@ -87,13 +80,20 @@ app.get('/', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-    res.render('login')
+    var fmsg = req.flash();
+    console.log(fmsg);
+    var feedback = '';
+    if(fmsg.error){
+        feedback = fmsg.error[0];
+    }
+    res.render('login', {errorMsg: feedback})
 })
 
 app.post('/login',
     passport.authenticate('local', {
         successRedirect: '/',
-        failureRedirect: '/login'
+        failureRedirect: '/login',
+        failureFlash: true
     }));
 
 app.get('/logout', function(req, res){
