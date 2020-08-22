@@ -3,13 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agora 글쓰기</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/1bee29aae8.js" crossorigin="anonymous"></script>
+    <title>글쓰기 - Agora</title>
+    <link rel="stylesheet" href="./css/write_wrap.css" />
 </head>
 <body>
-    <form action="/newpost" method="POST">
-        <p><input type="text" name="title" placeholder="title"></p>
-        <p><textarea name="description" placeholder="description"></textarea></p>
-        <p><input type="submit"></p>
-    </form>
+    <div id="header">
+        <a href="/"><img class="head_img" src="./img/agora_img.png"></a>
+            <div id="body_search" >
+                <i class="fas fa-search"></i>
+                <input class="search_input" type="text" name="search" placeholder="검색" />
+            </div>
+                    <a href="./login" class="log">로그인</a>
+                    <a href="./register" class="log">회원가입</a>
+    </div>
+        <div id="container">
+            <section>
+                <div>
+                    <h4 class="tit_box">글쓰기</h4>
+                </div>
+                <div>
+                    <form method="POST" action="/newpost" name="wrt_form">
+                        <ul>
+                            <li class="subject">
+                                <input type="text" class="ipt" placeholder="제목" maxlength="40" autocomplete="off" name="title" />
+                            </li>
+                            <li>
+                                <textarea style="resize: none;" name="description" cols="200" row="8" id="textBox"></textarea> 
+                            </li>
+                            <li>
+                                <div class="btm_btns_box">
+                                    <div class="fl">                   
+                                            <a href="/"><button class="btn_line_gray" type="button">취소</button></a>
+                                    </div> 
+                                        <div class="fr">
+                                            <input class="btn_line_blue" type="submit" value="등록" />
+                                        </div>
+                                </div>
+                            </li>           
+                        </ul>
+                    </form>
+                </div>
+            </section>
+        </div>
 </body>
 </html>

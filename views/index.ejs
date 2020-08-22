@@ -30,14 +30,14 @@
                     <div id="top_body">
                     <div class="big_news_name">Today News</div>
                         <div id="flex_part">
-                            <div class="news_part" id="part_1"><p class="news_name">챔스 8강</p>
-                                멘체스터 시티가 레알을 2대1로...<p class="user_name">Hawng42</p></div>
-                            <div class="news_part" id="part_2"><p class="news_name">멜론 차트</p>
-                                싹스리가 차트를 싹다 싹스리 하는 중...<p class="user_name">Melon12</p></div>
-                            <div class="news_part" id="part_3"><p class="news_name">발로란트 공략</p>
-                                레디언트 어떻게 가냐고요? 모두 알려드리...<p class="user_name">FpsGOD2</p></div>
-                            <div class="news_part" id="part_4"><p class="news_name">손채건 논란?</p>
-                                학생 손채건의 진실을 파해쳐드리...<p class="user_name">Essu21</p></div>
+                            <a href="#" class="news_part" id="part_1"><p class="news_name">챔스 8강</p>
+                                멘체스터 시티가 레알을 2대1로...<p class="user_name">Hawng42</p></a>
+                            <a href="#" class="news_part" id="part_2"><p class="news_name">멜론 차트</p>
+                                싹스리가 차트를 싹다 싹스리 하는 중...<p class="user_name">Melon12</p></a>
+                            <a href="#" class="news_part" id="part_3"><p class="news_name">발로란트 공략</p>
+                                레디언트 어떻게 가냐고요? 모두 알려드리...<p class="user_name">FpsGOD2</p></a>
+                            <a href="#" class="news_part" id="part_4"><p class="news_name">손채건 논란?</p>
+                                학생 손채건의 진실을 파해쳐드리...<p class="user_name">Essu21</p></a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,6 @@
                                         <% } else { %> 
                                             <a class="update_box" onclick="alert('로그인 후 이용해주세요!'); window.location = '/login';">
                                         <% } %>
-                                            
                                             <div class="Update_text"><h3 class="box_big_name">재밌는 이야기를 적어주세요</h3>
                                                 <p class="box_main_text">사람들과 즐겁게 소통하자!</p>
                                             </div>
@@ -60,6 +59,50 @@
                                                 </div>
                                         </a>
                                 </div>
+                                <% for(var i=0; i<posts.length; i++){
+                                    var data = posts[i]; %>
+
+                                    <div class="community_box">
+                                    <div class="box_left">
+                                        <div class="flex_box_left">
+                                            <div class="button_box">
+                                                <button aria-label="upvote" class="voteButton">
+                                                    <span class="button_hover">
+                                                        <i class="fas fa-thumbs-up"></i>
+                                                    </span>
+                                                </button>
+                                                <div class="views" style="color:#1A1A1B">11.3k</div>
+                                                <button aria-label="upvote" class="voteButton">
+                                                    <span class="button_hover">
+                                                        <i class="fas fa-thumbs-down"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box_right">
+                                        <div class="post_box">
+                                            <div class="box_user_name">
+                                                <div class="text_name"> <%= data.author_id %> </div>
+                                            </div>
+                                            <div class="box_user_post">
+                                                <div class="text_post_box">
+                                                    <h3 class="text_post"><%=data.title%></h3>
+                                                </div>
+                                            </div>
+                                            <div class="box_share_comments">
+                                                <a class="link_comment">
+                                                    <i class="fas fa-comment-alt"></i>
+                                                    <span class="comment_txt">34</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                    
+                                <% } %>
+                                
                         </div>
                         <div id="third_body" class="flex_third_body">
                             <div class="search_chart">
@@ -100,14 +143,13 @@
                                     </div>
                                         <div class="chart_footer">
                                             <div class="view_box">
-                                                <a class="view_box_in">VIEW ALL</a>
+                                                <span class="view_box_in">VIEW ALL</span>
                                             </div>
                                         </div>
                                 </div>
                         </div>
                     </div>
             </div>
-        <script src="./js/index.js">
-        </script>
+        <script src="./js/index.js"></script>
     </body>
 </html>

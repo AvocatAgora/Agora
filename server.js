@@ -42,7 +42,6 @@ passport.serializeUser(function(user, done){
 
 passport.deserializeUser(function(id, done){
     auth.userId = id;
-    console.log('user ID ' + auth.userId);
     db.query('SELECT * FROM users', function(err, result){
         done(null, result[0])
     })
@@ -76,14 +75,16 @@ passport.use(new LocalStrategy(
 ))
 
 app.get('/', (req, res) => {
-    res.render('index', { 
-        isOwner: auth.isOwner(req, res),
+
+    db.query('SELECT * FROM posts ORDER BY id DESC LIMIT 10', function(err, result){
+        res.render('index', { 
+            isOwner: auth.isOwner(req, res),
+            posts: result})
     })
 })
 
 app.get('/login', (req, res) => {
     var fmsg = req.flash();
-    console.log(fmsg);
     var feedback = '';
     if(fmsg.error){
         feedback = fmsg.error[0];
@@ -111,7 +112,6 @@ app.get('/register', (req, res) => {
 })
 
 app.post('/register', async (req, res) => {
-    console.log(req.body);
     var post = req.body;
     if(post.password === post.Repassword){
         db.query('INSERT INTO users (user_id, user_name, user_password, user_month, user_gender) VALUES (?, ?, ?, ?, ?)', 
@@ -132,14 +132,16 @@ app.get('/newpost', (req, res) => {
 app.post('/newpost', (req, res) => {
     var post = req.body;
     db.query('SELECT * FROM users WHERE id = ?', [auth.userId], function(err, result){
-        console.log(result[0].user_name);
         db.query('INSERT INTO posts (title, description, created, author_id) VALUES (?, ?, NOW(), ?)',
         [post.title, post.description, result[0].user_name], function(err2, result2){
             if(err2) throw err2;
-            console.log(result, result2);
-            res.redirect(`/${result2.insertId}`);
+            res.redirect(`/page/${result2.insertId}`);
         })
     })
+})
+
+app.get('/page/:pageid', (req, res) => {
+    res.send(req.params.pageid);
 })
 
 app.listen(3000, '0.0.0.0', function(){
